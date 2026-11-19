@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Noble Tribe is a Christian ministry in Obele, Surulere, Lagos. Discover our mission, Sunday gatherings and ways to connect.">
+  <meta name="theme-color" content="#201a24">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Noble Tribe — Faith. People. Purpose.">
+  <meta property="og:description" content="A Christian ministry in Obele, Surulere, Lagos. There is a place for you at Noble Tribe.">
+  <meta property="og:image" content="images/logo.png">
+  <title>Noble Tribe — Faith. People. Purpose.</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Church",
+      "name": "Noble Tribe",
+      "email": "nobletribe.iwcc@gmail.com",
+      "telephone": "+234 901 981 9445",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "31 Micheal Ogun Street, Obele Sports Center, Obele",
+        "addressLocality": "Surulere",
+        "addressRegion": "Lagos",
+        "addressCountry": "NG"
+      },
+      "sameAs": [
+        "https://www.facebook.com/nobletribeintl/",
+        "https://www.instagram.com/nobletribeintl/",
+        "https://www.youtube.com/@nobletribeng",
+        "https://www.tiktok.com/@nobletribeng",
+        "https://www.mixlr.com/nobletribe"
+      ]
+    }
+  </script>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Your existing styles for the whole page -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- HERO STYLES: these only affect the nt-hero section. Kept AFTER style.css so they win. -->
+  <style>
+    /* ===== THE HERO FRAME ===== */
+    .nt-hero{
+      position:relative;
+      min-height:100vh;               /* older browsers */
+      min-height:100svh;              /* correct height on phones */
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:#201a24;
+      color:#fff;
+      font-family:'DM Sans',system-ui,sans-serif;
+    }
+
+    /* ===== BACKGROUND VIDEO (fills the whole hero) ===== */
+    .nt-hero__media{position:absolute;inset:0;z-index:0}
+    .nt-hero__video{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;               /* fills the screen */
+      object-position:center;
+    }
+
+    /* Dark layer so the words are easy to read */
+    .nt-hero__shade{
+      position:absolute;inset:0;z-index:1;
+      background:linear-gradient(90deg,rgba(32,26,36,.85) 0%,rgba(32,26,36,.55) 60%,rgba(32,26,36,.35) 100%);
+    }
+
+    /* ===== LAYOUT: text on the left, reel on the right ===== */
+    .nt-hero__inner{position:relative;z-index:2;width:100%;padding:5rem 0}
+    .nt-hero__wrap{
+      width:min(1160px,90%);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:3rem;
+      align-items:center;
+    }
+    .nt-hero__content{max-width:620px}
+
+    /* ===== THE REEL (sharp portrait video in a frame) ===== */
+    .nt-hero__frame{
+      justify-self:center;
+      height:min(78vh,660px);
+      height:min(78svh,660px);
+      aspect-ratio:9/16;              /* reel shape */
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.2);
+      box-shadow:0 30px 80px rgba(0,0,0,.55);
+      background:#000;
+    }
+    .nt-hero__frame video{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* Desktop only: blur the background copy so it looks like soft colour behind the reel */
+    @media (min-width:900px){
+      .nt-hero__video{
+        filter:blur(32px) brightness(.75);
+        transform:scale(1.2);         /* hides the blurry edges */
+      }
+    }
+
+    /* ===== TEXT ===== */
+    .nt-hero__eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#d4a95a;margin-bottom:1rem}
+    .nt-hero__title{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.1;font-size:clamp(2.2rem,5.5vw,4.5rem);margin-bottom:1rem}
+    .nt-hero__title em{color:#d4a95a;font-style:italic}
+    .nt-hero__text{font-size:1.1rem;line-height:1.6;max-width:520px;opacity:.92;margin-bottom:1.8rem}
+
+    .nt-hero__actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.6rem}
+    .nt-btn{display:inline-block;padding:.85rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid transparent}
+    .nt-btn--light{background:#f5f0ea;color:#201a24}
+    .nt-btn--ghost{border-color:rgba(255,255,255,.5);color:#fff}
+
+    .nt-hero__service{display:flex;align-items:center;gap:.6rem;font-size:.95rem}
+    .nt-hero__dot{width:10px;height:10px;border-radius:50%;background:#5fd58a;box-shadow:0 0 0 4px rgba(95,213,138,.25)}
+
+    .nt-hero__scroll{position:absolute;left:5%;bottom:1.2rem;z-index:2;color:#fff;font-size:.8rem;text-decoration:none;opacity:.8}
+
+    /* ===== PHONES AND TABLETS: one full-screen video, no frame ===== */
+    @media (max-width:899px){
+      .nt-hero__wrap{display:block}
+      .nt-hero__frame{display:none}
+      .nt-hero__shade{background:rgba(32,26,36,.6)}
+      .nt-hero__inner{padding:4rem 0 5rem}
+    }
+  </style>
+
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="announcement">
+    <span class="announcement-dot" aria-hidden="true"></span>
+    <p>Join us this Sunday <span>·</span> 9:00 AM &amp; 10:30 AM</p>
+    <a href="#visit">Plan your visit <span aria-hidden="true">↗</span></a>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Noble Tribe home">
+        <img src="images/logo.png" alt="Noble Tribe" class="site-logo" style="max-width: 50%; height: auto;">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-icon" aria-hidden="true"></span>
+        <span class="sr-only">Open navigation menu</span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#about">Our story</a>
+        <a href="#beliefs">What we believe</a>
+        <a href="#ministries">Community</a>
+        <a href="#messages">Sermons</a>
+        <a href="#events">Events</a>
+        <a href="#giving">Give</a>
+        <a href="#visit">Visit</a>
+        <a class="nav-cta" href="#contact">Get connected <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="nt-hero" id="home" aria-labelledby="hero-title">
+
+      <!-- Video 1: the background (blurred on desktop, full-screen on phones) -->
+      <div class="nt-hero__media" aria-hidden="true">
+        <video class="nt-hero__video" autoplay muted loop playsinline preload="auto">
+          <source src="Videos/chruch-video.mp4..mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="nt-hero__shade" aria-hidden="true"></div>
+
+      <div class="nt-hero__inner">
+        <div class="nt-hero__wrap">
+
+          <div class="nt-hero__content">
+            <p class="nt-hero__eyebrow">A faith community in Lagos</p>
+            <h1 class="nt-hero__title" id="hero-title">A place to belong.<br><em>A faith to grow in.</em></h1>
+            <p class="nt-hero__text">Noble Tribe is a Christian ministry with a heart to make disciples of Christ and make Kingdom realities an experience here on earth.</p>
+            <div class="nt-hero__actions">
+              <a class="nt-btn nt-btn--light" href="#visit">Plan your visit ↗</a>
+              <a class="nt-btn nt-btn--ghost" href="https://www.mixlr.com/nobletribe" target="_blank" rel="noopener noreferrer">Listen live ↗</a>
+            </div>
+            <div class="nt-hero__service">
+              <span class="nt-hero__dot" aria-hidden="true"></span>
+              <span><strong>Sunday gatherings</strong> &nbsp;9:00 &amp; 10:30 AM</span>
+            </div>
+          </div>
+
+          <!-- Video 2: the sharp reel in a frame (desktop only) -->
+          <div class="nt-hero__frame" aria-hidden="true">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="Videos/chruch-video.mp4..mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+      <a class="nt-hero__scroll" href="#welcome">↓ Discover Noble Tribe</a>
+    </section>
+
+    <section class="welcome section-pad" id="welcome">
+      <div class="container welcome-grid">
+        <div class="section-index" data-reveal><span>01</span><i></i> WHO WE ARE</div>
+        <div class="welcome-copy" data-reveal>
+          <p class="eyebrow">Welcome to Noble Tribe</p>
+          <h2>Faith is a journey.<br><em>You don’t have to walk it alone.</em></h2>
+          <p class="large-copy">We believe everyone deserves a place where they are known, loved and encouraged to grow. Whether you are exploring faith or looking for a church home, you are welcome here.</p>
+          <a class="underlined-link" href="#about">Get to know us <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="welcome-mark" data-reveal aria-hidden="true"><span>NT</span><i></i><small>FAITH · PEOPLE · PURPOSE</small></div>
+      </div>
+    </section>
+
+    <section class="mission section-pad" id="about">
+      <div class="container mission-grid">
+        <div class="mission-heading" data-reveal>
+          <p class="eyebrow eyebrow-gold">Our heart</p>
+          <h2>Make disciples.<br><em>Live the Kingdom.</em></h2>
+        </div>
+        <div class="mission-copy" data-reveal>
+          <p class="mission-quote">“Make Disciples of Christ in all Nations, and make Kingdom Realities in Christ an experience here on earth.”</p>
+          <p>This mission is how Noble Tribe describes its calling. We gather around the Word of God and seek to share the Christian faith with a difference.</p>
+          <a class="underlined-link underlined-light" href="#beliefs">Explore our foundation <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <span class="mission-watermark" aria-hidden="true">N</span>
+    </section>
+
+    <section class="beliefs section-pad" id="beliefs">
+      <div class="container beliefs-grid">
+        <div class="beliefs-intro" data-reveal>
+          <p class="eyebrow">Our foundation</p>
+          <h2>Rooted in the<br><em>Word of God.</em></h2>
+          <p>Noble Tribe identifies as a Christian ministry and describes faith and the Word of God as central to its community.</p>
+        </div>
+        <div class="belief-list">
+          <article class="belief-item" data-reveal>
+            <span class="belief-number">01</span>
+            <div><h3>Faith in Christ</h3><p>Our stated mission is to make disciples of Christ in all nations.</p></div>
+            <span class="belief-mark" aria-hidden="true">↗</span>
+          </article>
+          <article class="belief-item" data-reveal>
+            <span class="belief-number">02</span>
+            <div><h3>The Word of God</h3><p>We describe growth in faith as grounded in the Word of God.</p></div>
+            <span class="belief-mark" aria-hidden="true">↗</span>
+          </article>
+          <article class="belief-item" data-reveal>
+            <span class="belief-number">03</span>
+            <div><h3>A place to grow together</h3><p>We want people to find a place where they are known, loved and encouraged to grow.</p></div>
+            <span class="belief-mark" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit section-pad" id="visit">
+      <div class="container visit-grid">
+        <div class="visit-copy" data-reveal>
+          <p class="eyebrow eyebrow-gold">Your first Sunday</p>
+          <h2>Come as you are.<br><em>We’ll save you a seat.</em></h2>
+          <p>We’d love to welcome you in person. Get in touch before you come if you have questions or would like help finding us.</p>
+          <a class="button button-light" href="https://form.typeform.com/to/Uf0H47sr">Let us know you’re coming <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="visit-details" data-reveal>
+          <div class="visit-detail">
+            <span class="detail-label">SUNDAY GATHERINGS</span>
+            <p>9:00 AM <span>&amp;</span> 10:30 AM</p>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-label">FIND US</span>
+            <p>31 Micheal Ogun Street<br>Obele Sports Center, Obele<br>Surulere, Lagos, Nigeria</p>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=31+Micheal+Ogun+Street+Obele+Sports+Center+Surulere+Lagos+Nigeria" target="_blank" rel="noopener noreferrer">Open directions <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="visit-detail">
+            <span class="detail-label">NEED A HAND?</span>
+            <p><a href="tel:+2349019819445">+234 901 981 9445</a></p>
+            <p><a href="mailto:nobletribe.iwcc@gmail.com">nobletribe.iwcc@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="community section-pad" id="ministries">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">Find your place</p><h2>There’s room <em>for you.</em></h2></div>
+          <p>The current Noble Tribe website highlights these communities. Contact the church for current meeting details and ways to take part.</p>
+        </div>
+        <div class="community-grid">
+          <article class="community-card" data-reveal>
+            <span class="community-index">01 / COMMUNITY</span>
+            <h3>Noble Children</h3>
+            <p>Ask us about Noble Children’s community and what to expect when you visit.</p>
+            <a href="mailto:nobletribe.iwcc@gmail.com?subject=Noble%20Children%20community">Ask about Noble Children <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="community-card" data-reveal>
+            <span class="community-index">02 / COMMUNITY</span>
+            <h3>Noble Youths &amp; Singles</h3>
+            <p>Get in touch to learn about Noble Youths &amp; Singles community and current activities.</p>
+            <a href="mailto:nobletribe.iwcc@gmail.com?subject=Noble%20Youths%20%26%20Singles%20community">Ask about Noble Youths &amp; Singles <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="community-card" data-reveal>
+            <span class="community-index">03 / COMMUNITY</span>
+            <h3>Noble Men</h3>
+            <p>Get in touch to learn about Noble Men’s community and current activities.</p>
+            <a href="mailto:nobletribe.iwcc@gmail.com?subject=Noble%20Men%20community">Ask about Noble Men <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="community-card" data-reveal>
+            <span class="community-index">04 / COMMUNITY</span>
+            <h3>Noble Women</h3>
+            <p>Get in touch to learn about Noble Women’s community and current activities.</p>
+            <a href="mailto:nobletribe.iwcc@gmail.com?subject=Noble%20Women%20community">Ask about Noble Women <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="community-card" data-reveal>
+            <span class="community-index">05 / COMMUNITY</span>
+            <h3>Noble Outreach</h3>
+            <p>Get in touch to learn about Noble Outreach’s community and current activities.</p>
+            <a href="mailto:nobletribe.iwcc@gmail.com?subject=Noble%20Outreach%20community">Ask about Noble Outreach <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="messages section-pad" id="messages">
+      <div class="container messages-grid">
+        <div data-reveal>
+          <p class="eyebrow eyebrow-gold">Messages &amp; media</p>
+          <h2>Words to carry<br><em>into your week.</em></h2>
+          <p>Listen to Noble Tribe live on Mixlr. The message cards alongside this note are fictional examples to illustrate a future sermon library; they are not published recordings.</p>
+          <a class="button button-light" href="https://www.mixlr.com/nobletribe" target="_blank" rel="noopener noreferrer">Open Noble Tribe on Mixlr <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="sermon-samples">
+          <article class="sermon-card" data-reveal>
+            <span class="sample-pill">FICTIONAL SAMPLE</span>
+            <span class="sermon-category">FAITH &amp; EVERYDAY LIFE</span>
+            <h3>Faith worked by love</h3>
+            <p>A sample message concept about the role of love in expressing and living out one's faith.</p>
+            <span class="sermon-meta"><i>·</i> <audio controls>
+  <source src="sermons/sunday-sermon.mp3" type="audio/mpeg">
+</audio></span>
+          </article>
+          <article class="sermon-card" data-reveal>
+            <span class="sample-pill">FICTIONAL SAMPLE</span>
+            <span class="sermon-category">LIFE IN COMMUNITY</span>
+            <h3>Faith confession</h3>
+            <p>A sample message concept about the importance of confessing one's faith and being vulnerable in the community.</p>
+            <span class="sermon-meta"> <i>·</i> <audio controls>
+  <source src="sermons/Sunday-services.mp3" type="audio/mpeg">
+</audio></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="leadership section-pad" id="leadership">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">Leadership</p><h2>People who serve <em>the community.</em></h2></div>
+          <p>These are sample role descriptions only. No leader names, biographies or photographs have been supplied or verified.</p>
+        </div>
+        <div class="leadership-grid">
+          <article class="leader-card" data-reveal>
+            <span class="sample-pill">SAMPLE ROLE · NOT A PERSON</span>
+            <span class="leader-monogram" aria-hidden="true">01</span>
+            <h3>Church leadership</h3>
+            <p>Replace this sample with a church-approved name, role and biography.</p>
+          </article>
+          <article class="leader-card" data-reveal>
+            <span class="sample-pill">SAMPLE ROLE · NOT A PERSON</span>
+            <span class="leader-monogram" aria-hidden="true">02</span>
+            <h3>Ministry leadership</h3>
+            <p>Replace this sample with a church-approved name, role and biography.</p>
+          </article>
+          <article class="leader-card" data-reveal>
+            <span class="sample-pill">SAMPLE ROLE · NOT A PERSON</span>
+            <span class="leader-monogram" aria-hidden="true">03</span>
+            <h3>Community care</h3>
+            <p>Replace this sample with a church-approved name, role and biography.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonies section-pad" id="testimonies">
+      <div class="container testimony-grid">
+        <div data-reveal>
+          <p class="eyebrow">Stories of faith</p>
+          <h2>Every story<br>deserves <em>care.</em></h2>
+          <p>There are no permission-verified testimonies available for this site. These fictional examples demonstrate a possible layout only; they are not accounts from Noble Tribe members.</p>
+        </div>
+        <div class="testimony-list">
+          <blockquote class="testimony-card" data-reveal>
+            <span class="sample-pill">FICTIONAL EXAMPLE · NOT A REAL TESTIMONY</span>
+            <p>“A sample reflection on finding encouragement and a welcoming community.”</p>
+            <footer>Illustrative placeholder <span>·</span> Replace only with a real, approved story</footer>
+          </blockquote>
+          <blockquote class="testimony-card" data-reveal>
+            <span class="sample-pill">FICTIONAL EXAMPLE · NOT A REAL TESTIMONY</span>
+            <p>“A sample reflection on growing in faith and learning to serve others.”</p>
+            <footer>Illustrative placeholder <span>·</span> Replace only with a real, approved story</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="events section-pad" id="events">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">Life together</p><h2>Gather, grow <em>and celebrate.</em></h2></div>
+          <p>These fictional event concepts have no confirmed dates, venues or registration. Contact the church for its actual programme.</p>
+        </div>
+        <div class="event-samples">
+          <article class="event-sample-card" data-reveal>
+            <span class="sample-pill">FICTIONAL CONCEPT · DATE UNCONFIRMED</span>
+            <span class="event-concept-number">01</span>
+            <p class="sermon-category">SAMPLE GATHERING</p>
+            <h3>Worship &amp; the Word</h3>
+            <p>A proposed concept for a shared time of worship and reflection. This is not a confirmed event.</p>
+          </article>
+          <article class="event-sample-card" data-reveal>
+            <span class="sample-pill">FICTIONAL CONCEPT · DATE UNCONFIRMED</span>
+            <span class="event-concept-number">02</span>
+            <p class="sermon-category">SAMPLE COMMUNITY EVENT</p>
+            <h3>Fellowship Table</h3>
+            <p>A proposed concept for conversation and connection across the church community. Not scheduled.</p>
+          </article>
+          <article class="event-sample-card" data-reveal>
+            <span class="sample-pill">FICTIONAL CONCEPT · DATE UNCONFIRMED</span>
+            <span class="event-concept-number">03</span>
+            <p class="sermon-category">SAMPLE GATHERING</p>
+            <h3>Evening of Prayer</h3>
+            <p>A proposed concept for communal prayer. No date, location or programme has been confirmed.</p>
+          </article>
+        </div>
+        <a class="underlined-link events-contact" href="mailto:nobletribe.iwcc@gmail.com?subject=Church%20events%20and%20programme">Ask about actual upcoming events <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="giving section-pad" id="giving">
+      <div class="container giving-grid">
+        <div data-reveal>
+          <p class="eyebrow eyebrow-gold">Giving &amp; generosity</p>
+          <h2>Give with care.<br><em>Ask us directly.</em></h2>
+        </div>
+        <div data-reveal>
+          <p>No bank details, payment links or approved giving instructions have been provided. To avoid misdirecting a gift, please contact Noble Tribe and verify any giving details directly with church leadership before making a payment.</p>
+          <a class="button button-light" href="mailto:nobletribe.iwcc@gmail.com?subject=Approved%20giving%20information">Request verified information <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contact">
+      <div class="container closing-inner" data-reveal>
+        <p class="eyebrow eyebrow-gold">Your next step starts here</p>
+        <h2>There is a place for you<br>at <em>Noble Tribe.</em></h2>
+        <div class="closing-actions">
+          <a class="button button-light" href="#visit">Plan your visit <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="mailto:nobletribe.iwcc@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand-block">
+        <a class="brand footer-brand" href="#home" aria-label="Noble Tribe home">
+          <img src="images/logo.png" alt="Noble Tribe" class="site-logo">
+        </a>
+        <p>A place to belong.<br>A hope to share.</p>
+      </div>
+      <div class="footer-column">
+        <span class="footer-label">EXPLORE</span>
+        <a href="#about">Our story</a>
+        <a href="#beliefs">What we believe</a>
+        <a href="#ministries">Community</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#messages">Listen live</a>
+        <a href="#testimonies">Stories</a>
+      </div>
+      <div class="footer-column">
+        <span class="footer-label">JOIN US</span>
+        <a href="#visit">Sunday gatherings</a>
+        <a href="#visit">Find us in Lagos</a>
+        <a href="#giving">Giving information</a>
+        <a href="mailto:nobletribe.iwcc@gmail.com">Send us an email</a>
+        <a href="tel:+2349019819445">Call +234 901 981 9445</a>
+      </div>
+      <div class="footer-column footer-social">
+        <span class="footer-label">FOLLOW ALONG</span>
+        <a href="https://www.facebook.com/nobletribeintl/" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span></a>
+        <a href="https://www.instagram.com/nobletribeintl/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+        <a href="https://www.youtube.com/@nobletribeng" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span></a>
+        <a href="https://www.tiktok.com/@nobletribeng" target="_blank" rel="noopener noreferrer">TikTok <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="current-year">2026</span> Noble Tribe</span>
+      <span>31 Micheal Ogun Street, Obele, Surulere, Lagos</span>
+      <span class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="#home">Back to top ↑</a></span>
+    </div>
+    <p class="container footer-note">For current service and event information, please contact the church directly.</p>
+  </footer>
+</body>
+</html>
