@@ -42,8 +42,10 @@ h1 em, h2 em { font-weight: 400; }
 .site-header { position: sticky; z-index: 10; top: 0; border-bottom: 1px solid rgba(32,26,36,.07); background: rgba(251,249,246,.96); backdrop-filter: blur(16px); transition: box-shadow .25s ease; }
 .site-header.is-scrolled { box-shadow: 0 8px 26px rgba(32,26,36,.08); }
 .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-.brand { display: inline-flex; align-items: center; }
-.site-logo { width: 132px; height: 82px; display: block; object-fit: contain; }
+.brand { display: inline-flex; align-items: center; border-radius: 14px; }
+.brand:focus-visible { outline: 2px solid #85518d; outline-offset: 4px; }
+.site-logo { width: 104px; height: 94px; display: block; border: 1px solid rgba(115,66,125,.2); border-radius: 14px; background: #fff; box-shadow: 0 5px 16px rgba(32,26,36,.08); object-fit: contain; transition: box-shadow .2s ease, transform .2s ease; }
+.brand:hover .site-logo { box-shadow: 0 9px 22px rgba(32,26,36,.13); transform: translateY(-1px); }
 .primary-nav { display: flex; align-items: center; gap: clamp(18px, 2.5vw, 35px); font-size: 11px; font-weight: 600; }
 .primary-nav > a:not(.nav-cta) { transition: color .2s ease; }
 .primary-nav > a:not(.nav-cta):hover { color: #806b82; }
@@ -267,7 +269,7 @@ h1 em, h2 em { font-weight: 400; }
   .announcement { min-height: 34px; gap: 7px; font-size: 8px; }
   .announcement a { margin-left: 2px; }
   .header-inner { min-height: 68px; }
-  .site-logo { width: 118px; height: 74px; }
+  .site-logo { width: 92px; height: 84px; }
   .hero { min-height: min(780px, max(640px, calc(100svh - 102px))); }
   .hero-inner { padding-block: 90px 78px; }
   .hero h1 { font-size: clamp(44.1px, 10.8vw, 61.2px); }
