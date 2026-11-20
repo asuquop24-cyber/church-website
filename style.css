@@ -269,7 +269,7 @@ h1 em, h2 em { font-weight: 400; }
   .announcement { min-height: 34px; gap: 7px; font-size: 8px; }
   .announcement a { margin-left: 2px; }
   .header-inner { min-height: 68px; }
-  .site-logo { width: 80px; height: 20px; }
+  .site-logo { width: 60px; height: auto; }
   .hero { min-height: min(780px, max(640px, calc(100svh - 102px))); }
   .hero-inner { padding-block: 90px 78px; }
   .hero h1 { font-size: clamp(44.1px, 10.8vw, 61.2px); }
